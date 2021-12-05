@@ -1,8 +1,3 @@
-// for(let i = 0; i < 10; i++) {
-//     let z = aleatorio(10, 100)
-//     document.write(z + '<br/>')
-// } 
-
 let villaPlatzi = document.getElementById('villaPlatzi');
 let lienzo = villaPlatzi.getContext('2d');
 
@@ -62,18 +57,50 @@ function cargarPollo() {
     dibujar();
 }
 
+let cantidadVacas = aleatorio(0, 3);
+let cantidadCerdos = aleatorio(0, 3);
+let cantidadPollos = aleatorio(0, 3); 
+
 function dibujar() {
-    if (fondo.cargaOk) {
+    if (fondo.cargaOk) 
+    {
         lienzo.drawImage(fondo.imagen, 0, 0);
     }
-    if (vaca.cargaOk) {
-        lienzo.drawImage(vaca.imagen, 100, 100);
+
+    if (vaca.cargaOk) 
+    {
+        for(let v = 0; v < cantidadVacas; v++)
+        {   
+            let x = aleatorio(0, 5);
+            let y = aleatorio(0, 5);
+            x = x * 80;
+            y = y * 80;
+            lienzo.drawImage(vaca.imagen, x, y);
+        }
     }
-    if (cerdo.cargaOk) {
-        lienzo.drawImage(cerdo.imagen, 200, 200);
+
+    if (cerdo.cargaOk) 
+    {
+        for(let c = 0; c < cantidadCerdos; c++)
+        {   
+            let x = aleatorio(0, 5)
+            let y = aleatorio(0, 5)
+            x = x * 80;
+            y = y * 80;
+            lienzo.drawImage(cerdo.imagen, x, y);
+        }        
     }
-    if (pollo.cargaOk) {
-        lienzo.drawImage(pollo.imagen, 300, 300);
+
+    if (pollo.cargaOk) 
+    {
+        for(let p = 0; p < cantidadPollos; p++)
+        {   
+            let x = aleatorio(0, 5)
+            let y = aleatorio(0, 5)
+            x = x * 80;
+            y = y * 80;
+            lienzo.drawImage(pollo.imagen, x, y);
+        }         
     }
 }
 
